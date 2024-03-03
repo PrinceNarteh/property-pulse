@@ -1,7 +1,7 @@
 import React from "react";
-import { InfoBox } from ".";
+import InfoBox from "./InfoBox";
 
-export const InfoBoxes = () => {
+const InfoBoxes = () => {
   return (
     <section>
       <div className="container-xl lg:container m-auto">
@@ -9,10 +9,9 @@ export const InfoBoxes = () => {
           <InfoBox
             heading="For Renters"
             backgroundColor="bg-gray-100"
-            textColor=""
-            buttonInfo={{
-              text: "Browse Properties",
+            btnInfo={{
               link: "/properties",
+              text: "Browse Properies",
               backgroundColor: "bg-black",
             }}
           >
@@ -22,10 +21,10 @@ export const InfoBoxes = () => {
           <InfoBox
             heading="For Property Owners"
             backgroundColor="bg-blue-100"
-            buttonInfo={{
+            btnInfo={{
               link: "/add-property",
-              backgroundColor: "bg-blue-500",
               text: "Add Property",
+              backgroundColor: "bg-blue-500",
             }}
           >
             List your properties and reach potential tenants. Rent as an airbnb
@@ -36,3 +35,5 @@ export const InfoBoxes = () => {
     </section>
   );
 };
+
+export default InfoBoxes;
