@@ -75,7 +75,7 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
           )}
           {property.rates.monthly && (
             <p>
-              <FaMoneyBill className="inlline mr-2" /> Monthly
+              <FaMoneyBill className="inline mr-2" /> Monthly
             </p>
           )}
         </div>
