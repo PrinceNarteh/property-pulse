@@ -15,8 +15,9 @@ export type Property = {
   square_feet: number;
   amenities: string[];
   rates: {
-    weekly: number;
-    monthly: number;
+    weekly?: number;
+    monthly?: number;
+    nightly?: number;
   };
   seller_info: {
     name: string;
