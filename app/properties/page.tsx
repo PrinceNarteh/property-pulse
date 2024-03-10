@@ -1,8 +1,24 @@
 import React from "react";
-import properties from "@/properties.json";
 import PropertyCard from "@/components/PropertyCard";
+import { apiUrl } from "@/constants";
+import { Property } from "@/types";
 
-const PropertiesPage = () => {
+async function fetchProperties(): Promise<Property[]> {
+  try {
+    const res = await fetch(`${apiUrl}/properties`);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await res.json();
+    return data.properties;
+  } catch (error: any) {
+    return error.message;
+  }
+}
+
+const PropertiesPage = async () => {
+  const properties = await fetchProperties();
+
   return (
     <section className="px-4 py-6">
       <div className="container-xl lg:container m-auto px-4 py-6">
