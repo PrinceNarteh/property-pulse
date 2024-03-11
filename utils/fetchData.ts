@@ -10,7 +10,8 @@ export async function fetchData<T>({ url }: params): Promise<T> {
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
-    return res.json();
+    const data = await res.json();
+    return data.message;
   } catch (error: any) {
     return error.message;
   }

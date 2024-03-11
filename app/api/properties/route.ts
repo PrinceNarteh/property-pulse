@@ -5,7 +5,7 @@ export const GET = async () => {
   try {
     await connectDB();
     const properties = await Property.find({});
-    return Response.json(properties);
+    return Response.json({ message: properties }, { status: 200 });
   } catch (error) {
     return new Response("Something went wrong", {
       status: 500,

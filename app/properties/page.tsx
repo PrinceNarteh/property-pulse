@@ -4,7 +4,7 @@ import { fetchData } from "@/utils/fetchData";
 import { Property } from "@/types";
 
 const PropertiesPage = async () => {
-  const { properties } = await fetchData<{ properties: Property[] }>({
+  const properties = await fetchData<Property[]>({
     url: "/properties",
   });
 
