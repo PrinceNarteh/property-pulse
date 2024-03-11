@@ -5,7 +5,7 @@ import { Property } from "@/types";
 import { fetchData } from "@/utils/fetchData";
 
 const HomeProperties = async () => {
-  const properties = await fetchData<Property>({
+  const properties = await fetchData<Property[]>({
     url: "/properties",
   });
 
