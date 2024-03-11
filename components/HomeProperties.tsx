@@ -1,9 +1,14 @@
 import React from "react";
-import properties from "@/properties.json";
 import PropertyCard from "./PropertyCard";
 import Link from "next/link";
+import { Property } from "@/types";
+import { fetchData } from "@/utils/fetchData";
 
-const HomeProperties = () => {
+const HomeProperties = async () => {
+  const properties = await fetchData<Property>({
+    url: "/properties",
+  });
+
   const recentProperties = properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
