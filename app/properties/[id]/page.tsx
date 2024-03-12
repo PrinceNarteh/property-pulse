@@ -8,6 +8,7 @@ import { fetchData } from "@/utils/fetchData";
 import ProperyHeaderImage from "@/components/properties/ProperyHeaderImage";
 import Link from "next/link";
 import PropertyDetails from "@/components/properties/PropertyDetails";
+import Spinner from "@/components/Spinner";
 
 const Page = () => {
   const { id } = useParams();
@@ -42,6 +43,7 @@ const Page = () => {
   }
   return (
     <div>
+      {loading && <Spinner loading={loading} />}
       {!loading && property && (
         <>
           <ProperyHeaderImage image={property.images[0]} />
