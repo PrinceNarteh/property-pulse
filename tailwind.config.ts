@@ -11,6 +11,9 @@ const config: Config = {
       fontFamily: {
         sans: ["Poppins", "san-serif"],
       },
+      gridTemplateColumns: {
+        "70/30": "70% 28%",
+      },
     },
   },
   plugins: [],
